@@ -18,7 +18,7 @@ public class StringPerformance{
         long builderDuration = endBuilder - startBuilder;
 
         // Printing results converted into milliseconds
-        System.out.println(concatDuration / 1000000);
-        System.out.println(builderDuration / 1000000);
+        System.out.println("String Concatenation: " + concatDuration / 1000000 + " ms");
+        System.out.println("String Builder: " + builderDuration / 1000000 + " ms");
     }
 }
