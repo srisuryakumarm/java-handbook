@@ -1,182 +1,136 @@
-# Java Engineering Handbook
+# java-handbook
 
-> A comprehensive Java knowledge base covering everything from Java fundamentals to advanced engineering concepts.
+A reference collection of Core Java, Collections, JVM internals, Concurrency, and Modern Java exercises — built topic by topic alongside DSA practice, as part of a structured 148-day SDE-2 preparation plan. Each exercise exists to prove out one specific concept, not to be exhaustive: the goal is to be able to explain *why* something works, not just that it does.
 
-## Purpose
+## Progress
 
-This repository is my personal Java knowledge base for becoming a strong Software Engineer.
+**16 / 27 exercises complete**
 
-The goal is not just to learn Java syntax, but to deeply understand:
+| Category | Exercises | Status |
+|---|---|---|
+| Core Java & OOP | 5 | ✅ Complete |
+| Collections Framework | 3 | ✅ Complete |
+| JVM Internals & Performance | 4 | ✅ Complete |
+| Generics | 2 | ✅ Complete |
+| Exception Handling | 1 | ✅ Complete |
+| Recursion | 1 | ✅ Complete |
+| Modern Java (17 / 21) | 2 | ✅ Complete |
+| Concurrency | 5 | ⬜ Not started |
+| Systems & Algorithm Utilities | 4 | ⬜ Not started |
 
-- How Java works internally
-- Why language features exist
-- JVM internals
-- Memory management
-- Concurrency
-- Performance optimization
-- Design principles
-- Modern Java
-- Interview preparation
-- Real-world engineering practices
-
-Everything is written as structured notes with examples, diagrams, code snippets, and best practices.
-
----
-
-# Learning Objectives
-
-- Master Java from beginner to advanced
-- Build strong JVM mental models
-- Understand memory, garbage collection, and performance
-- Write clean, maintainable Java code
-- Learn modern Java (Java 8–21+)
-- Prepare for SDE-2 interviews
-- Build production-ready Java skills
-
----
-
-# Repository Structure
+## Structure
 
 ```
-java-engineering-handbook
-│
-├── 01-Java-Fundamentals
-├── 02-OOP
-├── 03-Control-Flow
-├── 04-Classes-and-Objects
-├── 05-Collections
-├── 06-Generics
-├── 07-Exception-Handling
-├── 08-File-IO
-├── 09-Multithreading
-├── 10-Concurrency
-├── 11-JVM
-├── 12-Memory-Management
-├── 13-Garbage-Collection
-├── 14-Streams
-├── 15-Lambda
-├── 16-Functional-Programming
-├── 17-Reflection
-├── 18-Annotations
-├── 19-Design-Patterns
-├── 20-Performance
-├── 21-Modern-Java
-├── 22-Best-Practices
-├── 23-Interview-Notes
-├── diagrams
-├── code
-└── resources
+java-handbook/
+├── arrays/
+├── oop/
+├── collections/
+├── generics/
+├── exceptions/
+├── recursion/
+├── modernjava/
+├── concurrency/
+└── utils/
 ```
 
----
+## Exercises
 
-# Topics Covered
+<details>
+<summary><strong>Core Java & OOP</strong> — 5/5 ✅</summary>
 
-## Core Java
+Fluency with control flow, arrays/strings, and the object model — the base everything else in this repo (and in `dsa-java`) builds on.
 
-- Java Basics
-- Variables
-- Data Types
-- Operators
-- Control Statements
-- Methods
-- Arrays
-- Strings
-- Object-Oriented Programming
-- Packages
-- Access Modifiers
+- [x] Control flow & fluency exercises — FizzBuzz, Celsius↔Fahrenheit converter, prime checker *(Day 1)*
+- [x] Arrays & Strings — max value in an array, in-place reverse, character frequency counting, palindrome check *(Day 2)*
+- [x] `oop` package — `Book` (constructors, encapsulation), `Shape`/`Circle`/`Rectangle` (interfaces, polymorphism) *(Day 2)*
+- [x] `Account` class hierarchy + `AccountType` enum — the four OOP pillars, applied *(Day 5)*
+- [x] SOLID — `TaxCalculator` interface extraction (Open/Closed Principle); `NotificationService`/`MessageSender` refactor (Dependency Inversion) *(Day 6)*
+</details>
 
-## Intermediate Java
+<details>
+<summary><strong>Collections Framework</strong> — 3/3 ✅</summary>
 
-- Exception Handling
-- Collections Framework
-- Generics
-- Enums
-- Records
-- Nested Classes
-- File Handling
-- Serialization
+Where `ArrayList`, `HashSet`, `HashMap`, and `ArrayDeque` go from "APIs I called" to "data structures I can justify choosing."
 
-## Advanced Java
+- [x] `ArrayListPractice` *(Day 3)*
+- [x] `HashSetPractice`, `HashMapPractice`, `StackQueuePractice` *(Day 4)*
+- [x] `CollectionsBenchmark` — `ArrayList` vs. `ArrayDeque`, benchmarking insertion at index 0 *(Day 12)*
+</details>
 
-- JVM Architecture
-- Class Loading
-- Memory Model
-- Heap
-- Stack
-- Garbage Collection
-- Reflection
-- Annotations
-- Streams API
-- Lambda Expressions
-- Functional Interfaces
-- CompletableFuture
-- Concurrency
-- Synchronization
-- Locks
-- Thread Pools
-- Virtual Threads
+<details>
+<summary><strong>JVM Internals & Performance</strong> — 4/4 ✅</summary>
 
-## Performance
+The gotchas that separate "writes working Java" from "knows why it works" — stack vs. heap, the `Integer` cache, string immutability, and the `equals`/`hashCode` contract.
 
-- JVM Tuning
-- Profiling
-- Memory Leaks
-- Escape Analysis
-- JIT Compiler
-- Benchmarking
+- [x] `PassByValueDemo` — stack vs. heap, pass-by-value semantics for primitives vs. object references *(Day 9)*
+- [x] `TypesAndCache` — primitive overflow, the `Integer` cache trap (`-128` to `127`) *(Day 10)*
+- [x] `StringPerformance` — `+=` concatenation vs. `StringBuilder`, benchmarked *(Day 11)*
+- [x] `HashCodeContractDemo` — a broken `hashCode()` silently failing a `HashMap` lookup, then fixed *(Day 15)*
+</details>
 
-## Engineering Practices
+<details>
+<summary><strong>Generics</strong> — 2/2 ✅</summary>
 
-- SOLID Principles
-- Clean Code
-- Effective Java
-- Design Patterns
-- Code Smells
-- Refactoring
-- Testing
+Type-safe, reusable containers — and the `Comparable`/`Comparator` split that every sorted structure in this plan leans on.
 
----
+- [x] `ResponseWrapper<T>`, `Pair<A, B>` *(Day 16)*
+- [x] `Transaction` record + `TransactionSorting` — `Comparable` vs. `Comparator` *(Day 17)*
+</details>
 
-# Learning Style
+<details>
+<summary><strong>Exception Handling</strong> — 1/1 ✅</summary>
 
-Each topic follows a consistent structure:
+Checked vs. unchecked, and `try-with-resources` as the fix for the classic "forgot to close it" bug.
 
-1. Problem Statement
-2. Why It Exists
-3. How It Works
-4. Internal Working
-5. Memory Perspective
-6. JVM Perspective
-7. Advantages
-8. Limitations
-9. Best Practices
-10. Common Mistakes
-11. Interview Questions
-12. Code Examples
+- [x] `CacheMissException` (custom unchecked exception) + `try-with-resources` demo *(Day 18)*
+</details>
 
----
+<details>
+<summary><strong>Recursion</strong> — 1/1 ✅</summary>
 
-# Target Audience
+Base case, recursive case, and a first real look at redundant recomputation — the exact problem Dynamic Programming exists to solve later in the plan.
 
-- Software Engineers
-- Backend Developers
-- Java Developers
-- Students
-- SDE Interview Preparation
+- [x] `RecursionPractice` — factorial, Fibonacci (with call-tree tracing), digit-sum *(Day 8)*
+</details>
 
----
+<details>
+<summary><strong>Modern Java (17 / 21)</strong> — 0/2 ✅</summary>
 
-# Resources
+`record`, `sealed` types, and pattern matching for `switch` — the newer language features several later design-pattern exercises lean on.
 
-- Official Java Documentation
-- Effective Java
-- Java Language Specification
-- JVM Specification
-- OpenJDK Source Code
+- [ ] `ModernJava` — `sealed interface PaymentState permits Pending, Success, Failed`, each a `record`, with an exhaustive `switch` *(Day 28)*
+- [ ] Record Pattern rewrite — the same `PaymentState` switch, using Java 21 record patterns and a `when` guard clause *(Day 92)*
+</details>
 
----
+<details>
+<summary><strong>Concurrency</strong> — 0/5 ⬜</summary>
 
-# Progress
+From raw threads to explicit locks to a hand-rolled blocking queue — the progression that makes `ConcurrentHashMap` and the executor framework feel like consequences, not magic.
 
-This repository is continuously updated as I learn new Java concepts and engineering practices.
+- [ ] `ThreadInterleavingDemo` — two threads, interleaved non-deterministic output *(Day 29)*
+- [ ] `ReentrantLock`-based `Counter` — correctness under 100 concurrent threads *(Day 37)*
+- [ ] Producer-Consumer — `ReentrantLock` + two `Condition`s (`notFull`, `notEmpty`) *(Day 38)*
+- [ ] `ConcurrentMapBenchmark` — `Collections.synchronizedMap()` vs. `ConcurrentHashMap` under concurrent writes *(Day 39)*
+- [ ] Hand-rolled thread-safe bounded blocking queue (`ReentrantLock`/`Condition`, no `java.util.concurrent` shortcuts) + a concurrency test proving correctness *(Day 138)*
+</details>
+
+<details>
+<summary><strong>Systems & Algorithm Utilities</strong> — 0/4 ⬜</summary>
+
+Small, self-contained implementations of ideas that show up again later at real scale — on the platform, or in a system-design interview.
+
+- [ ] `ConsistentHashingDemo` — a `TreeMap<Integer, String>` ring, measuring key movement on server add/remove *(Day 60)*
+- [ ] Kruskal's Algorithm — implemented against the `UnionFind` class from `dsa-java`, on a small hardcoded weighted graph *(Day 77)*
+- [ ] `DPFoundations` — Fibonacci three ways (naive recursion, `HashMap` memoization, tabulation), timed for `n=40` *(Day 81)*
+- [ ] Base62 encoder/decoder — the building block behind a URL-shortener key generation service *(Day 120)*
+</details>
+
+## Stack
+
+- Java 21
+- IntelliJ IDEA
+
+## Related
+
+- [`dsa-java`](https://github.com/srisuryakumarm/dsa-java) — pattern-organized LeetCode solutions
+- [`scalable-ecommerce-platform`](https://github.com/srisuryakumarm/scalable-ecommerce-platform) — where several of these concepts (consistent hashing, Snowflake IDs, hand-rolled concurrency primitives) get applied for real
