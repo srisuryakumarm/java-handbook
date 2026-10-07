@@ -1,3 +1,5 @@
+package modernjava;
+
 public class PaymentStateDemo {
     public sealed interface PaymentState permits Pending, Success, Failed , Cancelled { }
 

@@ -1,3 +1,5 @@
+package exceptions;
+
 class CacheMissException extends RuntimeException{
     public CacheMissException(String message){
         super(message);

@@ -1,3 +1,5 @@
+package utils;
+
 public class StringPerformance{
     public static void main(String[] args){
 

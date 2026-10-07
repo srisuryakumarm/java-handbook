@@ -1,3 +1,5 @@
+package generics;
+
 public final class Transaction{
     private final String id;
     private final double amount;

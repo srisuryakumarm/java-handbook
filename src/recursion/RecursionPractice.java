@@ -1,3 +1,5 @@
+package recursion;
+
 public class RecursionPractice {
     public int factorial(int n){
         if(n <= 1){ // base-case
