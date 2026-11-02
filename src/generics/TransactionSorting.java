@@ -11,6 +11,7 @@ public class TransactionSorting{
         transaction.add(new Transaction("T2", 100.25, 1001L));
         transaction.add(new Transaction("T3", 750.75, 1005L));
         transaction.add(new Transaction("T4", 250.00, 1002L));
+        transaction.add(new Transaction("T5", 250.00, 1004L));
 
         // Sort by Amount
         transaction.sort((a1, a2) -> Double.compare(a1.getAmount(), a2.getAmount()));
@@ -21,7 +22,7 @@ public class TransactionSorting{
         System.out.println();
 
         // Sort by Time Stamp
-        transaction.sort((t1, t2) -> Long.compare(t2.getTimestamp(), t1.getTimestamp()));
+        transaction.sort((t1, t2) -> Long.compare(t2.getTimeStamp(), t1.getTimeStamp()));
 
         System.out.println("Sorted by Timestamp: ");
         transaction.forEach(System.out::println);

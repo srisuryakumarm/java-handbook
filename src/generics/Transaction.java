@@ -19,7 +19,7 @@ public final class Transaction{
         return amount;
     }
 
-    public long getTimestamp(){
+    public long getTimeStamp(){
         return timestamp;
     }
 
